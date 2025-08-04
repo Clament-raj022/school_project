@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>enter marks</title>
+</head>
+<body>
+    <center>
+        <h1> {{ request.session.name }} </h1>
+        <h1> Mark List</h1>
+        
+            {% include 'msg.html' %}
+           
+                <!-- <tr>
+                    <th>Student Class</th>
+                    <td>{{class}}</td>
+                </tr> -->
+
+              
+                <table border="1">
+                    <tr>
+                        <th>Student ID</th>
+                        <th>Tamil</th>
+                        <th>English</th>
+                        <th>Maths</th>
+                        <th>Science</th>
+                        <th>Socaial</th>
+                        <th>Teacher Mark Registered Date</th>
+                        <!-- <th>Edit</th> 
+                        <th>Delete</th>  -->
+                    </tr>
+                    
+                    {% for i in data %}
+                    <tr>
+                        <td>{{i.stu_id}}</td>
+                        <td>{{i.tamil}}</td>
+                        <td> {{i.english}} </td>
+                        <td>{{i.maths}}</td>
+                        <td>{{i.science}}</td>
+                        <td>{{i.social}}</td>                     
+                        <td>{{i.date}}</td>
+                        
+                        
+                        
+                   
+                        <!-- <td><img src="/teacher/static/prof_imgs/{{i.Image}}" style="height: 100px;
+                             width:100px; border:1px solid black;border-radius: 50%; padding:15px"></td> -->
+                        
+                        
+                        <!-- <td><a href="" style="color:blue;">Edit</a></td> -->
+                        <!-- <td><a href="" style="color:red;" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td> -->
+                        {% endfor %}
+                        
+                    </tr>
+    </center>
+</body>
+</html>

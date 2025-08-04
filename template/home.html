@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} home {% endblock %}</title>
+   <link rel="stylesheet" href="{% static 'css files/style.css' %}">
+</head>
+<body id="bd">
+    <center>
+        <header>
+            <h1 id="head">
+                Hello Admin
+            </h1>    
+        </header>
+        <nav>    {% include 'links.html' %}
+        </nav>
+  <section> {% block content %}
+               <a href="{% url 'login' %}" class="url">Logout</a>
+               <h1 id="cn">Welcome to Home Admin</h1>
+               
+    {% endblock %}</section>
+<footer>
+    <table>
+        <tr>
+            <th>For Contact:</th>
+        </tr>
+        <tr>
+            <th>Email:</th>
+            <td>thesun@gmail.com</td>
+           
+            <th>Mobile :</th>
+            <td>5659949668</td>
+           
+            <th>Address :</th>
+            <td>The Sun Head office
+                Anna Nagar 
+                Madurai-10
+            </td>
+        </tr>
+
+    </table>
+</footer>
+</center>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block title %} Product Registration {% endblock %}
+{% block content %}
+
+    <!-- bootstrap link -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
+
+    
+    <center >
+        <h1>Product Registration</h1>
+        <form action="prod_reg" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input class="btn btn-dark" type="reset" value="Clear">
+            <input class="btn btn-primary" type="submit" value="Register" >
+        </form>
+    </center>
+
+{% endblock %}

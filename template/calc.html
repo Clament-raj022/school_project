@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calc</title>
+</head>
+<body>
+    <form action="cal" method="post">
+        {% csrf_token %}
+        <center>
+            <h1>Simple Calculator</h1>
+            <p>Enter an First Number : <input type="text" name="tx1"></p>
+            <p>Enter an Second Number : <input type="text" name="tx2"></p>
+            <p><select name="dr">
+                <option>Addition</option>
+                <option>Subraction</option>
+                <option>Multiplication</option>
+                <option>Division</option>
+            </select></p>
+            <p><input type="submit"></p>
+            <p> <h3>{{ans}}</h3> </p>
+            <a href="{% url 'home' %}">Home</a>  &nbsp;
+        </center>
+    </form>
+</body>
+</html>

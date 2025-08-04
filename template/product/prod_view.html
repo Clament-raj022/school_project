@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Product Details</title>
+</head>
+<body>
+    <center>
+        <h1>View All Products</h1>
+        
+        <table border="1">
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Mobile Number</th>
+                <th>Product Price</th>
+                <th>Product Description</th>
+                <th>Product Stock</th>
+                <th>Product Image</th>
+                <th>Product Registered Date</th>
+                <th>Edit</th> 
+                <th>Delete</th> 
+            </tr>
+            
+            {% for i in data %}
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.ProductName}}</td>
+                <td>{{i.Mobile}}</td>
+                <td>{{i.price}}</td>
+                <td>{{i.Description}}</td>
+                <td>{{i.Product_stock}}</td>
+                {{i.Image}}
+                <td><img src="/static/prof_imgs/{{i.Image}}" style="height:50px;width: 50px; border-radius: 50%;border:1px solid black"></td>
+           
+                <!-- <td><img src="/teacher/static/prof_imgs/{{i.Image}}" style="height: 100px;
+                     width:100px; border:1px solid black;border-radius: 50%; padding:15px"></td> -->
+                <td>{{i.date}}</td>
+                
+                <td><a href="{% url 'edi_product' %}?q={{i.id}}" style="color:blue;">Edit</a></td>
+                <td><a href="{% url 'del_product' %}?q={{i.id}}" style="color:red;" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
+                {% endfor %}
+                
+            </tr>
+    </center>
+</body>
+</html>
+
+

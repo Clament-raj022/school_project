@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>enter marks</title>
+</head>
+<body>
+    <center>
+        <h1> {{ request.session.name }} </h1>
+        <h1>Register Student Mark List</h1>
+        
+            {% include 'msg.html' %}
+           
+                <!-- <tr>
+                    <th>Student Class</th>
+                    <td>{{class}}</td>
+                </tr> -->
+
+              
+            </table>
+            <h3>Mark List</h3>
+            <form action="mark_reg" method="get">
+            <table>
+                <tr>
+                    <th>Student Id :</th>
+                    <td><input type="text" name="stu_id" value="{{id}}" readonly></td>
+                </tr>
+                <tr>
+                    <th>Student Name :</th>
+                    <td><input type="text"value="{{name}}" readonly></td>
+                </tr>
+                <tr>
+                    <th>Tamil</th>
+                    <td><input type="text" name="tam"></td>
+                </tr>
+                <tr>
+                    <th>English</th>
+                    <td><input type="text" name="eng"></td>
+                </tr>
+                <tr>
+                    <th>Maths</th>
+                    <td><input type="text" name="mat"></td>
+                </tr>
+                <tr>
+                    <th>Science</th>
+                    <td><input type="text" name="sci"></td>
+                </tr>
+                <tr>
+                    <th>Social</th>
+                    <td><input type="text" name="soc"></td>
+                </tr>
+                <th>{{tam}}</th>
+            </table>
+            <tr>
+                <td><input type="reset" style="color:blue" value="Reset"></td>
+                <td><input type="submit" style="color:rgb(6, 106, 22)" value="Submit" ></td>
+            </tr>
+            </form>
+    </center>
+</body>
+</html>

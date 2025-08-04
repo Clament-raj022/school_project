@@ -1,0 +1,16 @@
+{% load static %}
+<nav style="size: 500px;">
+       <!-- <a href="{% url 'pali' %}">Palindrome</a>  &nbsp;  &nbsp;  &nbsp; 
+       <a href="{% url 'perfect' %}">Perfect Number</a>  &nbsp; &nbsp;  &nbsp; 
+       <a href="{% url 'calc' %}">Calculator</a>  &nbsp; &nbsp;  &nbsp; 
+       <a href="{% url 'fibo' %}">Fibonacci Series</a> &nbsp; &nbsp;  &nbsp;  -->
+       <a href="{% url 'home' %}" id="home">Home</a>
+       <link rel="stylesheet" href="{% static 'css files/style.css' %}">
+       <a href="{% url 'register' %}" class="url">Teacher Registration Page</a>     &nbsp; &nbsp;  &nbsp; 
+       <a href="{% url 'teacherdetails' %}" class="url">Teacher Details Page</a>  &nbsp; &nbsp;  &nbsp; 
+       <!-- <a href="{% url 'addproduct' %}" class="url"> Product Registration</a>&nbsp; &nbsp;  &nbsp;  -->
+       <!-- <a href="{% url 'addproduct' %}" class="url"> Product Registration</a>&nbsp; &nbsp;  &nbsp;  -->
+       <!-- <a href="{% url 'prod_view' %}" class="url">View Product Details </a>&nbsp; &nbsp;  &nbsp;  -->
+      <a href="{% url 'stud_registration' %}">Student Registration</a>  &nbsp; &nbsp;  &nbsp; 
+      <a href="{% url 'studentdetails' %}" class="url">Student Details Page</a>  &nbsp; &nbsp;  &nbsp;
+</nav>

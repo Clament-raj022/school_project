@@ -1,0 +1,14 @@
+{% extends 'home.html' %}
+
+    {% block title %}student registration{% endblock %}
+{% block content %}
+    <center>
+        <h1>Student Registration</h1>
+        <form action="stud_reg" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+        <input type="reset" value="Reset">
+        <input type="submit" value="Register">
+        </form>
+    </center>
+    {% endblock %}

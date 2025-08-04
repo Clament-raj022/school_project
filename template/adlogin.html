@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin login</title>
+    <style>
+        section{
+            background-color: rgb(206, 206, 206);
+            background-color: rgb(179, 179, 179);
+            vertical-align: middle;
+            height: 740px;
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+            border: 5px solid black;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 5px rgb(179, 179, 179) 
+        }
+        h1{
+            font-size: 100px;
+            font-family: 'Times New Roman', Times, serif;
+            color: rgb(65, 131, 166);
+            color: rgb(65, 131, 166);
+        }   
+        #reg{
+            background-color: rgb(179, 179, 179);
+            border: 2px solid black;
+            border-radius: 10px;
+            
+            font-size: 20px;    
+            
+            
+        }
+    </style>
+</head>
+<body>
+    <form action="adlogin" method="post">
+        {% csrf_token %}
+        <center>
+            <section>
+
+            <h1>Login Page</h1>
+            
+            {{form.as_p}}
+            <table>
+                <tr>
+                    <th><input type="reset" value="Clear"></th>
+                    <th><p><input type="submit" value="Login"></p></th>
+                </tr>
+                <tr>
+                     {% include 'msg.html' %}
+                </tr>
+            </table>
+
+            </section>
+            <!-- <a href="{% url 'home' %}">Home</a>  &nbsp; -->
+            <!-- <p> <h3>{{ans}}</h3> </p> -->
+        </center>
+    </form>
+</body>
+</html>

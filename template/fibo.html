@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fibonacci</title>
+</head>
+<body>
+    <form action="fib" method="post">
+        {% csrf_token %}
+        <center>
+            <h1>Fibonacci Series Program</h1>
+            <p>Enter an Number : <input type="text" name="tx1"></p>
+            <p><input type="submit"></p>
+            <p> <h3>{{ans}}</h3> </p>
+            <a href="{% url 'home' %}">Home</a>  &nbsp;
+        </center>
+    </form>
+</body>
+</html>

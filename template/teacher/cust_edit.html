@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>customer edit</title>
+</head>
+<body>
+    <center>
+        {% include msg.html %}
+        <h1> Edit Teacher Details </h1>
+        <form action="edi_cust" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table>
+                {% for i in data %}
+                <tr>
+                    <th>ID</th>
+                    <td><input type="text" name="id" value="{{ i.id }}" readonly></td>
+                </tr>
+                <tr>
+                    <th>Name</th>
+                    <td><input type="text" name="name" value="{{ i.teacher_name }}"></td>
+                </tr>
+                <tr>
+                    <th>Mail</th>
+                    <td><input type="text" name="name" value="{{ i.mail}}"></td>
+                </tr>
+                <tr>
+                    <th>Mobile Number</th>
+                    <td><input type="text" name="mobile" value="{{ i.mobile}}"></td>
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <td><input type="text" name="address" value="{{ i.address}}"></td>
+                </tr>
+                <tr>
+                    <th>Country</th>
+                    <td><input type="text" name="price" value="{{ i.country}}"></td>
+                </tr>
+                
+                <tr>
+                    <th>Product Image</th>
+                    <td><input type="file"  name="img"></td>
+                </tr>
+                <tr>
+                    <td><input type="reset" style="color:blue" value="Reset"></td>
+                    <td><input type="submit" style="color:rgb(0, 255, 42)" value="Submit"></td>Reset"></td>
+                </tr>
+            </table>
+            {% endfor %}
+
+    </center>
+
+
+
+
+
+</body>
+</html>

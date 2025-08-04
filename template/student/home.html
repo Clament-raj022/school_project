@@ -1,0 +1,9 @@
+{% extends  'teacher/home.html' %}
+<title>x{% block title %} home student {% endblock %}</title>
+    
+{% block content %}
+   <nav> {% include 'stu_link.html' %} </nav>
+    <center>
+    <h1> Welcome to Home {{ request.session.name }} </h1>
+    </center>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends  'home.html' %}
+<title>x{% block title %} View student {% endblock %}</title>
+{% block content %}
+<center>
+    <!-- <nav> {% include 'stu_link.html' %} </nav> -->
+    
+    
+    
+    <table border="1">
+        <tr>
+            <th>Student ID</th>
+            <th>Student Name</th>
+            <th>Student Register No</th>
+            <th>Student Class</th>
+            <th>Date of Birth</th>
+            <th>Mail</th>
+            <th>Mobile</th>
+            <th>Address</th>
+            <th>Student Image</th>
+            <th>Student Registered Date</th>
+            <!-- <th>Edit</th> 
+            <th>Delete</th>  -->
+        </tr>
+        
+        {% for i in data %}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.name}}</td>
+            <td> {{i.your_reister_no_is}} </td>
+            <td>{{i.Class}}</td>
+            <td>{{i.date_of_birth}}</td>
+            <td>{{i.mail}}</td>
+            <td>{{i.mobile}}</td>
+            <td>{{i.address}}</td>
+            <td> <img src="/static/prof_imgs/{{i.Image}}" style="height:50px;width: 50px; border-radius: 50%;border:1px solid black" > </td>
+            <td>{{i.date}}</td>
+            
+            
+            
+       
+            <!-- <td><img src="/teacher/static/prof_imgs/{{i.Image}}" style="height: 100px;
+                 width:100px; border:1px solid black;border-radius: 50%; padding:15px"></td> -->
+            
+            
+            <!-- <td><a href="" style="color:blue;">Edit</a></td> -->
+            <!-- <td><a href="" style="color:red;" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td> -->
+            {% endfor %}
+            
+        </tr>
+</center>
+{% endblock %}

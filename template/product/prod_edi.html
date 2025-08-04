@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Product Details</title>
+</head>
+<body>
+    
+    <link rel="stylesheet" href="{% static 'prof_imgs' %}">
+    <center>
+        {% include 'msg.html' %}
+        <h1>Edit Product Details</h1>
+        <form action="edi_prod" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table>
+                {% for i in data %}
+                <tr>
+                    <th>Id</th>
+                    <td><input type="text" name="id" value="{{ i.id }}" readonly></td>
+                </tr>
+                <tr>
+                    <th>Product Name</th>
+                    <td><input type="text" name="name" value="{{ i.ProductName}}"></td>
+                </tr>
+                <tr>
+                    <th>Mobile Number</th>
+                    <td><input type="text" name="mobile" value="{{ i.Mobile}}"></td>
+                </tr>
+                <tr>
+                    <th>Product Price</th>
+                    <td><input type="text" name="price" value="{{ i.price}}"></td>
+                </tr>
+                <tr>
+                    <th>Product Description</th>
+                    <td><input type="text" name="description" value="{{ i.Description}}"></td>
+                </tr>
+                <tr>
+                    <th>Product Stock</th>
+                    <td><input type="text" name="stock" value="{{ i.Product_stock}}"></td>
+                </tr>
+                <tr>
+                    <th>Product Image</th>
+                    <td><input type="file"  name="img"></td>
+                </tr>
+                <tr>
+                    <td><input type="reset" style="color:blue" value="Reset"></td>
+                    <td><input type="submit" style="color:rgb(0, 255, 42)" value="Submit"></td>
+                </tr>
+            </table>
+            {% endfor %}
+
+    </center>
+</body>
+</html>
